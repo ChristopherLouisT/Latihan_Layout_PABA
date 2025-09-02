@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,10 +6,102 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/TopBar"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:src="@drawable/location"
+                android:layout_marginEnd="12dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="336 Lamberts Ln"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Brooklyn, NY 11235"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:textColor="#888" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/notification"
+            android:layout_marginEnd="16dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/SearchBar"
+        android:layout_below="@id/TopBar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/search_bg"
+        android:backgroundTint="#E2E5DE"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/search"
+            app:tint="@color/black" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Search in Products..."
+            android:textColor="#888"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/mic"
+            app:tint="@color/black" />
+    </LinearLayout>
+
     <ScrollView
         android:id="@+id/main_scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/SearchBar"
         android:layout_above="@id/bottom_nav">
 
 
@@ -26,7 +116,7 @@
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:overScrollMode="never"
+                android:overScrollMode="always"
                 android:scrollbars="none"
                 android:layout_marginBottom="12dp">
 
@@ -46,9 +136,10 @@
                             android:layout_width="56dp"
                             android:layout_height="56dp"
                             android:background="@drawable/circle_bg"
-                            android:padding="12dp"
+                            android:backgroundTint="@color/green"
+                            android:clipToOutline="true"
                             android:src="@drawable/pfp"
-                            android:scaleType="centerInside" />
+                            android:scaleType="centerCrop"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -73,7 +164,107 @@
                             android:backgroundTint="@color/blue"
                             android:src="@drawable/pfp"
                             android:clipToOutline="true"
-                            android:scaleType="centerInside" />
+                            android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Seasonal"
+                            android:textSize="12sp"
+                            android:layout_marginTop="4dp"
+                            android:textColor="#000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_width="72dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp">
+
+                        <ImageView
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/circle_bg"
+                            android:backgroundTint="@color/blue"
+                            android:src="@drawable/pfp"
+                            android:clipToOutline="true"
+                            android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fresh"
+                            android:textSize="12sp"
+                            android:layout_marginTop="4dp"
+                            android:textColor="#000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_width="72dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp">
+
+                        <ImageView
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/circle_bg"
+                            android:backgroundTint="@color/blue"
+                            android:src="@drawable/pfp"
+                            android:clipToOutline="true"
+                            android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Vegan"
+                            android:textSize="12sp"
+                            android:layout_marginTop="4dp"
+                            android:textColor="#000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_width="72dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp">
+
+                        <ImageView
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/circle_bg"
+                            android:backgroundTint="@color/blue"
+                            android:src="@drawable/pfp"
+                            android:clipToOutline="true"
+                            android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Seasonal"
+                            android:textSize="12sp"
+                            android:layout_marginTop="4dp"
+                            android:textColor="#000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_width="72dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp">
+
+                        <ImageView
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/circle_bg"
+                            android:backgroundTint="@color/blue"
+                            android:src="@drawable/pfp"
+                            android:clipToOutline="true"
+                            android:scaleType="centerCrop"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -87,13 +278,58 @@
                 </LinearLayout>
             </HorizontalScrollView>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/pfp"
-                android:background="@drawable/banner_bg"
-                android:clipToOutline="true" />
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="160dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/pfp"-->
+<!--                android:background="@drawable/banner_bg"-->
+<!--                android:clipToOutline="true" />-->
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:overScrollMode="always"
+                android:scrollbars="none"
+                android:layout_marginBottom="12dp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="300dp"
+                        android:adjustViewBounds="true"
+                        android:layout_height="160dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pfp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/banner_bg"
+                        android:clipToOutline="true" />
+
+                    <ImageView
+                        android:layout_width="300dp"
+                        android:adjustViewBounds="true"
+                        android:layout_height="160dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pfp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/banner_bg"
+                        android:clipToOutline="true" />
+
+                    <ImageView
+                        android:layout_width="300dp"
+                        android:adjustViewBounds="true"
+                        android:layout_height="160dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pfp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/banner_bg"
+                        android:clipToOutline="true" />
+                </LinearLayout>
+
+            </HorizontalScrollView>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -104,13 +340,13 @@
                 <View
                     android:layout_width="8dp"
                     android:layout_height="8dp"
-                    android:background="@drawable/dot_selected"
+                    android:background="@drawable/dot_unselected"
                     android:layout_margin="4dp" />
 
                 <View
                     android:layout_width="8dp"
                     android:layout_height="8dp"
-                    android:background="@drawable/dot_unselected"
+                    android:background="@drawable/dot_selected"
                     android:layout_margin="4dp" />
 
                 <View
