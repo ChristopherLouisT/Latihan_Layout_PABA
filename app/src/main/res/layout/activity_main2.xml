@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -432,7 +433,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Fruits & Veg..."
+                        android:text="Fruits &amp; Veg..."
                         android:textSize="14sp"
                         android:textStyle="bold"
                         android:textColor="@color/black"
@@ -461,7 +462,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Meat & Pou..."
+                        android:text="Meat &amp; Pou..."
                         android:textSize="14sp"
                         android:textStyle="bold"
                         android:textColor="@color/black"
@@ -490,7 +491,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Fish & Seaf..."
+                        android:text="Fish &amp; Seaf..."
                         android:textSize="14sp"
                         android:textStyle="bold"
                         android:textColor="@color/black"
